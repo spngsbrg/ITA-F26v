@@ -1,7 +1,6 @@
 #No funky files
 *.zip
 .DS_Store
-modul-XX
 
 # Logs
 logs
