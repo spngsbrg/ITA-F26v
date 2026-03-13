@@ -1,3 +1,7 @@
+#No funky files
+*.zip
+.DS_Store
+
 # Logs
 logs
 *.log
