@@ -3,7 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modul-04 og hej</title>
+    <title>Objekter og funktioner</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const author0 = {
+        firstName: "John",
+        lastName: "Doe",
+        getName: function (formal) {
+          //console.log(this.firstName + " " + this.lastName);
+          if (formal) {
+            return "Mr. " + this.firstName + " " + this.lastName;
+            let i = 0;
+          } else {
+            return this.firstName + " " + this.lastName;
+          }
+        },
+      };
+
+      const author1 = {
+        firstName: "Jane",
+        lastName: "Doe",
+        getName: function (formal) {
+          //console.log(this.firstName + " " + this.lastName);
+          if (formal) {
+            return "Ms. " + this.firstName + " " + this.lastName;
+            let i = 0;
+          } else {
+            return this.firstName + " " + this.lastName;
+          }
+        },
+      };
+      console.log(author0.getName(0));
+      console.log(author1.getName(1));
+    </script>
+  </body>
 </html>
