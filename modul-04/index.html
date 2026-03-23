@@ -21,20 +21,38 @@
         },
       };
 
+      // OBJEKT: author0 er et objekt – en samling af relaterede data og funktioner.
+      // Vi bruger const, så variablen ikke kan pege på et nyt objekt.
       const author1 = {
+        // EGENSKABER (properties): firstName og lastName er egenskaber på objektet.
+        // De gemmer data (strenge/strings) om objektet author.
         firstName: "Jane",
         lastName: "Doe",
+        // METODE: getName er en funktion, der er gemt som en egenskab på objektet.
+        // En funktion inde i et objekt kaldes en metode.
         getName: function (formal) {
-          //console.log(this.firstName + " " + this.lastName);
+          // PARAMETER: formal er en parameter – en variabel som metoden modtager,
+          // når den kaldes. Værdien bestemmes først, når metoden kaldes.
+
+          // BOOLEAN / TRUTHY-FALSY: formal bruges som en boolean (sand/falsk).
+          // I JavaScript er 0 falsy (opfattes som false) og 1 truthy (opfattes som true)
           if (formal) {
+            // this: refererer til det objekt, metoden tilhører – her author0.
+            // Med "Mr." fordi author0 er mand.
             return "Ms. " + this.firstName + " " + this.lastName;
+            // DEAD CODE: denne linje kan aldrig nås, fordi return afslutter funktionen.
             let i = 0;
           } else {
+            // Returnerer bare for- og efternavn.
             return this.firstName + " " + this.lastName;
           }
         },
       };
+      // METODEKALD: vi kalder getName() på author0.
+      // Argumentet 0 er false → går i else-grenen → printer "John Doe"
       console.log(author0.getName(0));
+      // METODEKALD: vi kalder getName() på author1.
+      // Argumentet 1 er true → går i if-grenen → printer "Ms. Jane Doe"
       console.log(author1.getName(1));
     </script>
   </body>
