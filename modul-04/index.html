@@ -36,6 +36,73 @@
       };
       console.log(author0.getName(0));
       console.log(author1.getName(1));
+
+      console.log(showMeTheMoney());
+
+      /*
+      let showMeTheMoney = function () {
+        return "Many money!!";
+      };
+      showMeTheMoney = 100;
+      */
+
+      function showMeTheMoney() {
+        return "Many money!!";
+      }
+
+      function Author(firstName, lastName, gender, isMarried) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.isMarried = isMarried;
+        this.getName = function (formal) {
+          //console.log(this.firstName + " " + this.lastName);
+
+          if (formal) {
+            let titulation = "";
+            if (gender == "F" && isMarried) {
+              titulation = "Mrs.";
+            } else if (gender == "F" && !isMarried) {
+              titulation = "Ms.";
+            } else {
+              titulation = "Mr.";
+            }
+            return titulation + " " + this.firstName + " " + this.lastName;
+          } else {
+            return this.firstName + " " + this.lastName;
+          }
+        };
+      }
+
+      let authorArray = [
+        { first: "Conny", last: "Dowey", gender: "F", isMarried: true },
+        { first: "Johnny", last: "Dowey", gender: "M", isMarried: true },
+        { first: "Janet", last: "Dowey", gender: "F", isMarried: false },
+        { first: "Chris", last: "Dowey", gender: "M", isMarried: true },
+      ];
+
+      let authorObjects = [];
+      console.log(authorObjects);
+
+      authorArray.forEach(function (author) {
+        /*let authorObj = new Author(author.first, author.last);
+        authorObjects.push(authorObj);*/
+
+        authorObjects.push(
+          new Author(
+            author.first,
+            author.last,
+            author.gender,
+            author.isMarried,
+          ),
+        );
+      });
+
+      console.log(authorObjects);
+
+      for (let i in authorObjects) {
+        console.log(authorObjects[i].getName(true));
+      }
     </script>
   </body>
 </html>
